@@ -1,46 +1,4 @@
-// import React, { useContext } from "react";
-// import { Navigate, Route, Routes } from "react-router-dom";
-// import Home from "./pages/Home";
-// import Login from "./pages/Login";
-// import Signup from "./pages/Signup";
-// import ListingPage1 from "./pages/ListingPage1";
-// import ListingPage2 from "./pages/ListingPage2";
-// import ListingPage3 from "./pages/ListingPage3";
-// import { userDataContext } from "./context/UserContext";
 
-// const App = () => {
-//   const { userdata } = useContext(userDataContext);
-
-//   return (
-//     <>
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/signup" element={<Signup />} />
-//         <Route path="/login" element={<Login />} />
-//         <Route
-//           path="/listingpage1"
-//           element={
-//             userdata != null ? <ListingPage1 /> : <Navigate to={"/login"} />
-//           }
-//         />
-//         <Route
-//           path="/listingpage2"
-//           element={
-//             userdata != null ? <ListingPage2 /> : <Navigate to={"/login"} />
-//           }
-//         />
-//         <Route
-//           path="/listingpage3"
-//           element={
-//             userdata != null ? <ListingPage3 /> : <Navigate to={"/login"} />
-//           }
-//         />
-//       </Routes>
-//     </>
-//   );
-// };
-
-// export default App;
 import React, { useContext } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";

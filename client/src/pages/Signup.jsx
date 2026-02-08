@@ -21,6 +21,21 @@ const Signup = () => {
   const handleSignup = async (e) => {
     try {
       e.preventDefault();
+      // Client-side validation
+      if (!name || name.trim().length < 3) {
+        toast.error("Username must be at least 3 characters");
+        return;
+      }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        toast.error("Please enter a valid email address");
+        return;
+      }
+      const passwordRegex = /^(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).*/;
+      if (!passwordRegex.test(password)) {
+        toast.error("Password must be at least 8 characters and include uppercase, lowercase, number and special character");
+        return;
+      }
       const result = await axios.post(
         serverUrl + "/auth/signup",
         {

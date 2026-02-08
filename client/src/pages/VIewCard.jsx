@@ -392,7 +392,7 @@ const VIewCard = () => {
                   </div>
 
                   <div className="flex justify-between text-gray-300">
-                    <span>EstateX Charge</span>
+                    <span>Esvio Charge</span>
                     <span>₹ {(cardDetails.rent * 7) / 100}</span>
                   </div>
 

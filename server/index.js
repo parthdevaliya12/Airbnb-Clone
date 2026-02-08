@@ -20,10 +20,13 @@ app.use(express.json())
 
 app.use(cookieParser())
 
-app.use(cors({
-    origin:"https://airbnb-clone-t2ax.onrender.com",
-    credentials:true,   
-}))
+
+app.use(
+    cors({
+        origin: true,
+        credentials: true,
+    }),
+);
 
 //router
 app.use('/auth', authRouter)

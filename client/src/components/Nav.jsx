@@ -13,6 +13,7 @@ import {
   MountainSnow,
   Store,
 } from "lucide-react";
+import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import { authDataContext } from "../context/AuthContext";
 import axios from "axios";
@@ -97,11 +98,11 @@ const Nav = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
         {/* Left Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 flex items-center justify-center text-white font-bold text-lg">
-            E
+          <div className="w-10 h-10 rounded-xl  flex items-center justify-center text-white font-bold text-lg">
+           <img src={logo} alt="" />
           </div>
           <h1 className="text-white font-extrabold text-2xl tracking-wide">
-            Estate<span className="text-pink-400">X</span>
+            Es<span className="text-pink-400">vio</span>
           </h1>
         </div>
 
@@ -138,7 +139,7 @@ const Nav = () => {
             <Menu size={18} className="text-white" />
             {userdata == null && ""}
             {userdata != null && (
-              <span className="rounded-full text-white mb-1 text-md font-bold">
+              <span className="rounded-full text-white bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 px-3 py-1  text-md font-bold">
                 {userdata?.name.slice(0, 1).toUpperCase()}
               </span>
             )}

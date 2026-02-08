@@ -20,6 +20,12 @@ const Login = () => {
   const handlelogin = async (e) => {
     try {
       e.preventDefault();
+      // Basic client-side validation
+      if (!email || !password) {
+        toast.error("Email and password are required");
+        return;
+      }
+    
       const result = await axios.post(
         serverUrl + "/auth/login",
         {
