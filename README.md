@@ -1,6 +1,6 @@
-# 🏡 EstateX – Property Listing & Booking Platform
+# 🏡 Esvio– Property Listing & Booking Platform
 
-EstateX is a modern, responsive **property listing and booking web application** built using the **MERN Stack**.  
+Esvio is a modern, responsive **property listing and booking web application** built using the **MERN Stack**.  
 Users can list properties, browse listings, book properties, manage bookings, and update or delete their own listings.
 
 ---
