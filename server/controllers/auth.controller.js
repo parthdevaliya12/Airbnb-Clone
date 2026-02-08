@@ -18,8 +18,8 @@ export const signup = async (req, res) => {
     const token = await getToken(user._id);
     res.cookie("token", token, {
       httpOnly: true,
-      secure: (process.env.NODE_ENVIRONMENT = "production"),
-      sameSite: "strict",
+      secure: true,
+      sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
     return res.status(200).json(user);
@@ -50,8 +50,8 @@ export const login = async (req, res) => {
     const token = await getToken(user._id);
     res.cookie("token", token, {
       httpOnly: true,
-      secure: (process.env.NODE_ENVIRONMENT = "production"),
-      sameSite: "strict",
+      secure:true,
+      sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
     return res.status(200).json(user);
