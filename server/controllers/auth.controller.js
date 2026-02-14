@@ -18,9 +18,10 @@ export const signup = async (req, res) => {
     const token = await getToken(user._id);
     res.cookie("token", token, {
       httpOnly: true,
-      secure: "",
-      sameSite: "",
+      secure: true,
+      sameSite: strict,
       maxAge: 7 * 24 * 60 * 60 * 1000,
+      domain:"https://airbnb-clone-roan-theta.vercel.app"
     });
     return res.status(200).json(user);
   } catch (error) {
@@ -50,9 +51,10 @@ export const login = async (req, res) => {
     const token = await getToken(user._id);
     res.cookie("token", token, {
       httpOnly: true,
-      secure:"",
-      sameSite: "",
+      secure:true,
+      sameSite: strict,
       maxAge: 7 * 24 * 60 * 60 * 1000,
+      domain:"https://airbnb-clone-roan-theta.vercel.app"
     });
     return res.status(200).json(user);
   } catch (error) {
