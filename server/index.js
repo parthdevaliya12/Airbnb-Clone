@@ -23,7 +23,7 @@ app.use(cookieParser())
 
 app.use(
     cors({
-        origin: "https://airbnb-clone-roan-theta.vercel.app/",
+        origin: "https://airbnb-clone-roan-theta.vercel.app",
         credentials: true,
     }),
 );
