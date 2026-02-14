@@ -13,7 +13,7 @@ import {
   MountainSnow,
   Store,
 } from "lucide-react";
-import logo from "../assets/logo.png";
+import logo from "/logo.png";
 import { useNavigate } from "react-router-dom";
 import { authDataContext } from "../context/AuthContext";
 import axios from "axios";

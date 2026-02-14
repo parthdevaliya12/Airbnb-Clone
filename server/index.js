@@ -37,5 +37,5 @@ app.use('/booking',bookingRouter)
 
 app.listen(port, () => {
     console.log(`app is running on port ${port}`);
-    connectDB()
+     connectDB()
 })
