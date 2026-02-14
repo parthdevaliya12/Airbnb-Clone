@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { authDataContext } from "../context/AuthContext";
 import { userDataContext } from "../context/UserContext";
-import  toast  from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -15,8 +15,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-    const { userdata, setUserData } = useContext(userDataContext);
-  
+  const { userdata, setUserData } = useContext(userDataContext);
 
   const handleSignup = async (e) => {
     try {
@@ -31,9 +30,12 @@ const Signup = () => {
         toast.error("Please enter a valid email address");
         return;
       }
-      const passwordRegex = /^(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).*/;
+      const passwordRegex =
+        /^(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).*/;
       if (!passwordRegex.test(password)) {
-        toast.error("Password must be at least 8 characters and include uppercase, lowercase, number and special character");
+        toast.error(
+          "Password must be at least 8 characters and include uppercase, lowercase, number and special character",
+        );
         return;
       }
       const result = await axios.post(
@@ -43,12 +45,11 @@ const Signup = () => {
           email,
           password,
         },
-        { withCredentials: true }
-       
+        { withCredentials: true },
       );
-       setUserData(result.data)
-       navigate('/')
-       toast.success("Signup successful!");
+      setUserData(result.data);
+      navigate("/");
+      toast.success("Signup successful!");
       console.log(result);
     } catch (error) {
       console.log(error);
@@ -65,19 +66,19 @@ const Signup = () => {
             Create Your <span className="text-pink-400">Account</span>
           </h1>
           <p className="text-gray-200 mt-4 text-sm leading-relaxed">
-            Join us today and unlock a modern dashboard experience with smooth
-            UI, secure login, and responsive design across all devices.
+            Esvio is a modern real estate platform that makes discovering and
+            booking properties simple, secure, and seamless.
           </p>
 
           <div className="mt-8 lg:mt-10 space-y-3 lg:space-y-4">
             <div className="flex items-center gap-3 text-gray-200 text-sm">
-              ✅ <span>Responsive Design</span>
+              ✅ <span>From stylish homes to premium stays</span>
             </div>
             <div className="flex items-center gap-3 text-gray-200 text-sm">
-              ✅ <span>Secure Authentication UI</span>
+              ✅ <span>Secure Authentication</span>
             </div>
             <div className="flex items-center gap-3 text-gray-200 text-sm">
-              ✅ <span>Modern Tailwind Layout</span>
+              ✅ <span>Responsive Layout</span>
             </div>
           </div>
         </div>
