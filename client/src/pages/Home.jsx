@@ -34,6 +34,7 @@ import Nav from "../components/Nav";
 import { useContext } from "react";
 import { listingDataContext } from "../context/ListingContext";
 import Card from "../components/Card";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const { listingData, newListData, setNewListData } =
@@ -79,7 +80,9 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <Footer/>
     </div>
+
   );
 };
 
